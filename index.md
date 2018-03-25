@@ -17,7 +17,7 @@ layout: page
       <td>
         {{ comment.name }}
         <br/>
-        {{ comment.date }}
+        {{ comment.client_date }}
       </td>
     </tr>
   {% endfor %}
