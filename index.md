@@ -5,13 +5,10 @@ layout: page
 
 <hr/>
 
-<!-- <table id="commentsTable" class="table table-striped">
- class="d-flex"
- -->
-<table id="commentsTable" >
+<table id="commentsTable" class="table table-striped">
   {% for c2 in site.data.comments %}
     {% assign comment = c2[1] %}
-    <tr id="comment_{{ comment.url }}">
+    <tr id="comment_{{ comment.url }}" class="d-flex">
       <td class="col-sm-9">
         {{comment.message }}
         <br/>
@@ -44,9 +41,9 @@ function filterComments() {
   for (i = 0; i < tr.length; i++)
       if ((filter != null)  && tr[i] && (tr[i].id != filter))
       {
-        // alert("HIDING "+tr[i].id);
-        tr[i].style.display = "none";
-
+        alert("HIDING "+tr[i].id);
+        // tr[i].style.display = "none";
+        tr[i].classList.add("invisible")
       }
 }
 
