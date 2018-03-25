@@ -5,16 +5,16 @@ layout: page
 
 <hr/>
 
-<table id="commentsTable">
+<table id="commentsTable" class="table table-striped">
   {% for c2 in site.data.comments %}
     {% assign comment = c2[1] %}
-    <tr id="comment_{{ comment.url }}" >
-      <td>
+    <tr id="comment_{{ comment.url }}" class="d-flex">
+      <td class="col-sm-9">
         {{comment.message }}
         <br/>
         ({{ comment.url }})
       </td>
-      <td>
+      <td class="col-sm-3">
         {{ comment.name }}
         <br/>
         {{ comment.client_date }}
