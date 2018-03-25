@@ -5,10 +5,13 @@ layout: page
 
 <hr/>
 
-<table id="commentsTable" class="table table-striped">
+<!-- <table id="commentsTable" class="table table-striped">
+ class="d-flex"
+ -->
+<table id="commentsTable" >
   {% for c2 in site.data.comments %}
     {% assign comment = c2[1] %}
-    <tr id="comment_{{ comment.url }}" class="d-flex">
+    <tr id="comment_{{ comment.url }}">
       <td class="col-sm-9">
         {{comment.message }}
         <br/>
@@ -29,15 +32,22 @@ layout: page
 
 function filterComments() {
 
-  var searchParams, filter, tr, td, i;
+  var searchParams, filter, tr, i;
 
   searchParams = new URL(document.location).searchParams;
   filter = searchParams && searchParams.get("q") ? "comment_"+searchParams.get("q") : null;
 
+  // alert(">"+filter);
+
   tr = document.getElementById("commentsTable").getElementsByTagName("tr");
 
   for (i = 0; i < tr.length; i++)
-      tr[i].style.display = (filter == null) || (tr[i].id == filter) ?  "" : "none";
+      if ((filter != null)  && tr[i] && (tr[i].id != filter))
+      {
+        // alert("HIDING "+tr[i].id);
+        tr[i].style.display = "none";
+
+      }
 }
 
 filterComments();
