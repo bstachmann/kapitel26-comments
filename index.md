@@ -1,46 +1,41 @@
 ---
-layout: page
+layout: plain
 ---
-### Kommentare
 
-<hr/>
+Filter for URL with parameter `q`, e. g. `?q=/git-buch/`
 
 <table id="commentsTable" class="table table-striped">
+  <tr class="d-flex">
+    <th class="col-sm-3">
+      URL
+    </th>
+    <th class="col-sm-2">
+      Name
+    </th>
+    <th class="col-sm-2">
+      Date
+    </th>
+    <th class="col-sm-5">
+      Message
+    </th>
+  </tr>
   {% for c2 in site.data.comments %}
     {% assign comment = c2[1] %}
     <tr id="comment_{{ comment.url }}" class="d-none">
-      <td class="col-sm-9">
-        {{comment.message }}
-        <br/>
+      <td class="col-sm-3">
         ({{ comment.url }})
       </td>
-      <td class="col-sm-3">
+      <td class="col-sm-2">
         {{ comment.name }}
-        <br/>
+      </td>
+      <td class="col-sm-2">
         {{ comment.client_date }}
+      </td>
+      <td class="col-sm-5">
+        {{comment.message }}
       </td>
     </tr>
   {% endfor %}
 </table>
 
-<script>
-
-// Filter for pageURL with `?q=/git-buch/`
-
-function filterComments() {
-
-  var searchParams, filter, tr, i, filtered;
-
-  searchParams = new URL(document.location).searchParams;
-  filter = searchParams && searchParams.get("q") ? "comment_"+searchParams.get("q") : null;
-
-
-  tr = document.getElementById("commentsTable").getElementsByTagName("tr");
-
-  for (i = 0; i < tr.length; i++)
-    if (filter == null || tr[i].id == filter)
-        tr[i].classList.add("d-flex");
-}
-
-filterComments();
-</script>
+{% include filter-script.html %}

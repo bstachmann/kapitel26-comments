@@ -1,0 +1,19 @@
+<script>
+
+function filterComments() {
+
+  var searchParams, filter, tr, i, filtered;
+
+  searchParams = new URL(document.location).searchParams;
+  filter = searchParams && searchParams.get("q") ? "comment_"+searchParams.get("q") : null;
+
+
+  tr = document.getElementById("commentsTable").getElementsByTagName("tr");
+
+  for (i = 0; i < tr.length; i++)
+    if (filter == null || tr[i].id == filter)
+        tr[i].classList.add("d-flex");
+}
+
+filterComments();
+</script>
