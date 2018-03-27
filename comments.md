@@ -2,14 +2,14 @@
 layout: plain
 ---
 <table id="commentsTable" class="table table-striped">
-  {% for c2 in site.data.comments | sort: 'date' | reverse %}
-    {% assign comment = c2[1] %}
-    <tr id="comment_{{ comment.url }}" class="d-none">
+  {% assign sortedComments = site.data.comments | sort %}
+  {% for comment in sortedComments reversed %}
+    <tr id="comment_{{ comment[1].url }}" class="d-none">
       <td class="col-sm-9">
-        {{comment.message }}
+        {{comment[1].message }}
       </td>
       <td class="col-sm-3">
-        {{ comment.name }}, {{ comment.client_date }}
+        {{ comment[1].name }}, {{ comment[1].client_date }}
       </td>
     </tr>
   {% endfor %}

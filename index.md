@@ -19,20 +19,23 @@ Filter for URL with parameter `q`, e. g. `?q=/git-buch/`
       Message
     </th>
   </tr>
-  {% for c2 in site.data.comments | sort: 'date' | reverse %}
-    {% assign comment = c2[1] %}
+  {% assign sortedComments = site.data.comments | sort %}
+  {% for comment in sortedComments reversed %}
     <tr id="comment_{{ comment.url }}" class="d-none">
       <td class="col-sm-3">
-        ({{ comment.url }})
+        {{ comment[1].url }}
       </td>
       <td class="col-sm-2">
-        {{ comment.name }}
+        {{ comment[1].name }}
       </td>
       <td class="col-sm-2">
-        {{ comment.client_date }}
+        {{ comment[1].client_date }}
       </td>
-      <td class="col-sm-5">
-        {{comment.message }}
+      <td class="col-sm-2">
+        {{ comment[1].date }}
+      </td>
+      <td class="col-sm-3">
+        {{comment[1].message }}
       </td>
     </tr>
   {% endfor %}
