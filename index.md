@@ -19,7 +19,7 @@ Filter for URL with parameter `q`, e. g. `?q=/git-buch/`
       Message
     </th>
   </tr>
-  {% for c2 in site.data.comments %}
+  {% for c2 in site.data.comments | sort: 'date') | reverse %}
     {% assign comment = c2[1] %}
     <tr id="comment_{{ comment.url }}" class="d-none">
       <td class="col-sm-3">
