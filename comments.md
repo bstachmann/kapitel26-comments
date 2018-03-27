@@ -7,13 +7,9 @@ layout: plain
     <tr id="comment_{{ comment.url }}" class="d-none">
       <td class="col-sm-9">
         {{comment.message }}
-        <br/>
-        ({{ comment.url }})
       </td>
       <td class="col-sm-3">
-        {{ comment.name }}
-        <br/>
-        {{ comment.client_date }}
+        {{ comment.name }}, {{ comment.client_date }}
       </td>
     </tr>
   {% endfor %}
