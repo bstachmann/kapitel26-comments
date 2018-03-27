@@ -4,7 +4,7 @@ layout: plain
 
 Filter for URL with parameter `q`, e. g. `?q=/git-buch/`
 
-<table id="commentsTable" class="table table-striped">
+<table id="commentsTable" class="table">
   <tr class="d-flex">
     <th class="col-sm-3">
       URL

@@ -1,7 +1,7 @@
 ---
 layout: plain
 ---
-<table id="commentsTable" class="table table-striped">
+<table id="commentsTable" class="table">
   {% assign sortedComments = site.data.comments | sort %}
   {% for comment in sortedComments reversed %}
     <tr id="comment_{{ comment[1].url }}" class="d-none">
