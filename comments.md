@@ -12,7 +12,7 @@ layout: plain
         <small>
           {{ comment[1].name }}
           <br/>
-          {{ comment[1].date | date: "%H:%M Uhr am %d.%m.%Y" }}
+          {{ comment[1].date | date: site.comments_date_format }}
         </small>
       </td>
     </tr>

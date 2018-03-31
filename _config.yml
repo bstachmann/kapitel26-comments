@@ -48,3 +48,5 @@ comments_columns:
   - date: 1
   - message: 3
   - tags: 1
+
+comments_date_format: "%H:%M Uhr am %d.%m.%Y"
