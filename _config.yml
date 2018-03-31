@@ -40,3 +40,11 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+comments_columns:
+  - url: 3
+  - name: 1
+  - client_date: 2
+  - date: 1
+  - message: 3
+  - tags: 1
