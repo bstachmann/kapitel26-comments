@@ -9,11 +9,11 @@ layout: plain
         {{comment[1].message }}
       </td>
       <td class="col-sm-3">
-        <small>
           {{ comment[1].name }}
           <br/>
-          {{ comment[1].date | date: site.comments_date_format }}
-        </small>
+          <small>
+            {{ comment[1].date | date: site.comments_date_format }}
+          </small>
       </td>
     </tr>
   {% endfor %}
