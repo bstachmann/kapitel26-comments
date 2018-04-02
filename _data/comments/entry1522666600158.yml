@@ -1,0 +1,6 @@
+_id: 8561d190-3664-11e8-96c4-4192b95187e3
+url: /
+client_date: 'Mon, 02 Apr 2018 10:49:51 +0000'
+message: "Bisher gab keine einfache Möglichkeit hier auf diesem Blog Kommentare und Feedback zu hinterlassen. Habe heute, als Experiment, mal das Kommentarsytstem StaticMan (https://staticman.net/) eingebaut. Es gibt jetzt die Möglichkeit hier Kommentare einzugeben.\r\n\r\nStaticMan generiert daraus dann coolerweise Github-Pull-Request (im Repo https://github.com/bstachmann/kapitel26-comments), die René und Ich dann mergen können."
+name: Bjørn
+date: 1522666600
